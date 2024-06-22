@@ -1,0 +1,144 @@
+
+body {
+  position: relative;
+  scroll-behavior: smooth;
+  background-color: $white;
+}
+
+a {
+  color: $white;
+}
+
+.overflow-hidden {
+  @include breakpoint-down (desktop) {
+    overflow: hidden;
+  }
+}
+
+button,
+.button {
+  border: none;
+  @extend %alata;
+  cursor: pointer;
+  position: relative;
+  letter-spacing: .125rem;
+  border: solid .0625rem $black;
+  text-transform: uppercase;
+  padding: .4375rem 1.875rem;
+  background-color: transparent;
+  transition: all .3s ease-in-out;
+
+  &:hover {
+    color: $white;
+
+    @include breakpoint-down(desktop) {
+      background-color: $black;
+    }
+
+    @include breakpoint-up (desktop) {
+      &::before {
+        opacity: 1;
+        transform: scale(1, 1);
+      }
+    }
+  }
+  
+  &::before {
+    content: "";
+    top: 0rem;
+    left: 0rem;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    position: absolute;
+    background-color: $black;
+    transform: scale(1.2, 1.4);
+    transition: all .5s ease-in-out;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+  max-width: $maxMobileContainerSize;
+
+  &--middle {
+    margin-top: 4rem;
+  }
+
+  @include breakpoint-up (mobile) {
+    // padding: 1.5rem 3rem;
+  }
+
+  @include breakpoint-up (medium) {
+    max-width: 43rem;
+    padding: 2.5rem 2rem;
+  }
+
+  @include breakpoint-up (desktop) {
+    padding: 3.75rem 2rem;
+    max-width: $maxDesktopContainerSize;
+  }
+}
+
+%alata {
+  font-family: 'Alata', sans-serif;
+}
+
+%josefinSans {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+%flex {
+  display: flex;
+
+  &-fd_column {
+    flex-direction: column;
+  }
+
+  &-jc_center-ai_center {
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-jc_spacebetween-ai-center {
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+@mixin hover-effect {
+  position: relative;
+
+  &::after {
+    content: '';
+    width: 50%;
+    height: .125rem;
+    left: 50%;
+    bottom: -.4rem;
+    @include fadeOut;
+    position: absolute;
+    background-color: $white;
+    transform: translateX(-50%);
+    transition: all .3s ease-in-out;
+  }
+  
+  &:hover::after {
+    bottom: -.7rem;
+    @include fadeIn;
+  }
+}
+
+.onlyMobile {
+  @include breakpoint-up(desktop) {
+    display: none !important;
+  };
+}
+
+.onlyDesktop {
+  @include breakpoint-down(desktop) {
+    display: none;
+  };
+}
+

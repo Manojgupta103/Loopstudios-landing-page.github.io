@@ -1,0 +1,108 @@
+
+.footer {
+  margin-top: 1.25rem;
+  background-color: $black;
+
+  &__logo {
+    width: 12.5rem;
+    margin: 0 0 1.25rem;
+    
+    @include breakpoint-up (desktop) {
+      margin-bottom: 1.875rem;
+      align-self: flex-start;
+    }
+  }
+
+  &__container {
+    @extend
+      %flex,
+      %flex-fd_column,
+      %flex-jc_center-ai_center;
+    color: $white;
+
+    @include breakpoint-up (desktop) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    &__group {
+      @extend
+        %flex,
+        %flex-fd_column;
+      align-items: center;
+      justify-content: space-between;
+
+      @include breakpoint-down (desktop) {
+        &:nth-child(1) {
+          margin-bottom: 1.875rem;
+        }
+      }
+    }
+  }
+
+  &__links {
+    &__box {
+      @extend
+        %flex,
+        %flex-fd_column;
+      align-items: center;
+
+      @include landscape {
+        margin: 2rem 0;
+        flex-direction: row;
+      }
+
+      @include breakpoint-up (desktop) {
+        flex-direction: row;
+      }
+    }
+
+    &__item {
+      @extend %alata;
+      font-size: 1rem;
+      margin: .875rem 0;
+
+      @include landscape {
+        margin: 0 .875rem;
+      }
+
+      @include breakpoint-up (desktop) {
+        margin: 0 .875rem;
+        @include hover-effect;
+
+        &:first-child {
+          margin-left: 0rem;
+        }
+      }
+    }
+  }
+
+  &__social {
+    @extend
+      %flex,
+      %flex-jc_center-ai_center;
+    margin-bottom: 1.875rem;
+
+    @include breakpoint-up (desktop) {
+      align-self: flex-end;
+    }
+
+    &__item {
+      margin: 0 .9375rem;
+
+      @include breakpoint-up (desktop) {
+        @include hover-effect;
+
+        &:last-child {
+          margin-right: .1875rem;
+        }
+      }
+    }
+  }
+
+  &__copy {
+    @extend %alata;
+    font-size: 1rem;
+    color: $darkGray;
+  }
+}

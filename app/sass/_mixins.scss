@@ -1,0 +1,43 @@
+
+$breakpoints-up: (
+  "mobile": 25.6875rem,
+  "medium": 48rem,
+  "desktop": 64rem
+);
+
+$breakpoints-down: (
+  "mobile": 25.625rem,
+  "medium": 47.9375rem,
+  "desktop": 63.9375rem
+);
+
+@mixin breakpoint-up ($size) {
+  @media (min-width: map-get($breakpoints-up, $size)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-down ($size) {
+  @media (max-width: map-get($breakpoints-down, $size)) {
+    @content;
+  }
+}
+
+
+
+@mixin fadeIn {
+  visibility: hidden;
+  animation: fadeIn .4s ease-in-out forwards;
+}
+
+@mixin fadeOut {
+  visibility: hidden;
+  animation: fadeOut .4s ease-in-out forwards;
+}
+
+
+@mixin landscape {
+  @media (orientation: landscape) {
+    @content;
+  }
+}

@@ -1,59 +1,194 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Wanderson Silva <wandersonsilva768@gmail.com>" />
+    <meta name="creator" content="Wanderson Silva <wandersonsilva768@gmail.com>" />
+    <meta name="keywords" content="Loopstudios, virtual reality, globe, loop studios" />
+    <meta name="description" content="Loopstudios has been producing world-class virtual reality projects for some of the best companies around the globe." />
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="stylesheet" href="./dist/css/styles.min.css" media="all" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap" rel="stylesheet" />
+    <title>Frontend Mentor | Loopstudios landing page</title>
+  </head>
+  <body>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <header class="header">
+      <div class="header__overlay onlyMobile"></div>
+      <div class="header__container container">
+        <nav class="header__nav">
+          <a href="#" class="header__logo">
+            <img src="./images/logo.svg" alt="logo" />
+          </a>
   
-  <title>Frontend Mentor | Loopstudios landing page</title>
+          <a href="#" id="header__menu" class="header__menu onlyMobile">
+            <span></span>
+            <span></span>
+            <span></span>
+          </a>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-  About
-  Careers
-  Events
-  Products
-  Support
+          <div class="header__links">
+            <ul class="header__links-box">
+              <li class="header__links-item">
+                <a href="#">About</a>
+              </li>
+              <li class="header__links-item">
+                <a href="#">Careers</a>
+              </li>
+              <li class="header__links-item">
+                <a href="#">Events</a>
+              </li>
+              <li class="header__links-item">
+                <a href="#">Products</a>
+              </li>
+              <li class="header__links-item">
+                <a href="#">Support</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
 
-  Immersive experiences that deliver
+        <div class="header__hero">
+          <h1 class="header__hero-text">
+            Immersive experiences that deliver
+          </h1>
+        </div>
+      </div>
+    </header>
 
-  The leader in interactive VR
+    <section class="feature">
+      <div class="feature__container container container--middle">
+        <div class="feature__image"></div>
+        <div class="feature__description">
+          <h3 class="feature__description__title">
+            The leader in interactive VR
+          </h3>
+          <p class="feature__description__text">
+            Founded in 2011, Loopstudios has been producing world-class virtual reality projects for some of the best companies around the globe. Our award-winning creations have transformed businesses through digital experiences that bind to their brand.
+          </p>
+        </div>
+      </div>
+    </section>
 
-  Founded in 2011, Loopstudios has been producing world-class virtual reality 
-  projects for some of the best companies around the globe. Our award-winning 
-  creations have transformed businesses through digital experiences that bind 
-  to their brand.
+    <section class="creations">
+      <div class="creations__container container container--middle">
+        <div class="creations__header">
+          <h2 class="creations__title">our creations</h2>
+          <button class="onlyDesktop">see all</button>
+        </div>
 
-  Our creations
+        <div class="creations__grid">
+          <div class="creations__grid__item deep-earth">
+            <h3 class="creations__grid__item__title">
+              deep earth
+            </h3>
+          </div>
 
-  See all
+          <div class="creations__grid__item night-arcade">
+            <h3 class="creations__grid__item__title">
+              night arcade
+            </h3>
+          </div>
 
-  Deep earth
-  Night arcade
-  Soccer team VR
-  The grid
-  From up above VR
-  Pocket borealis
-  The curiosity
-  Make it fisheye
+          <div class="creations__grid__item soccer-team">
+            <h3 class="creations__grid__item__title">
+              soccer team vr
+            </h3>
+          </div>
 
-  About
-  Careers
-  Events
-  Products
-  Support
+          <div class="creations__grid__item grid">
+            <h3 class="creations__grid__item__title">
+              the<br/>grid
+            </h3>
+          </div>
 
-  © 2021 Loopstudios. All rights reserved.
+          <div class="creations__grid__item from-above">
+            <h3 class="creations__grid__item__title">
+              from up above vr
+            </h3>
+          </div>
 
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+          <div class="creations__grid__item pocket-borealis">
+            <h3 class="creations__grid__item__title">
+              pocket borealis
+            </h3>
+          </div>
+
+          <div class="creations__grid__item curiosity">
+            <h3 class="creations__grid__item__title">
+              the curiosity
+            </h3>
+          </div>
+
+          <div class="creations__grid__item fisheye">
+            <h3 class="creations__grid__item__title">
+              make it<br/>fisheye
+            </h3>
+          </div>
+        </div>
+
+        <div class="creations__footer">
+          <button class="onlyMobile">see all</button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer__container container container--middle">
+        <div class="footer__container__group">
+          <img src="./images/logo.svg" class="footer__logo" alt="logo" />
+
+          <div class="footer__links">
+            <ul class="footer__links__box">
+              <li class="footer__links__item">
+                <a href="#">About</a>
+              </li>
+              <li class="footer__links__item">
+                <a href="#">Careers</a>
+              </li>
+              <li class="footer__links__item">
+                <a href="#">Events</a>
+              </li>
+              <li class="footer__links__item">
+                <a href="#">Products</a>
+              </li>
+              <li class="footer__links__item">
+                <a href="#">Support</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer__container__group">
+          <div class="footer__social">
+            <a href="#" class="footer__social__item">
+              <i class="fab fa-facebook-square fa-2x"></i>
+            </a>
+
+            <a href="#" class="footer__social__item">
+              <i class="fab fa-twitter fa-2x"></i>
+            </a>
+
+            <a href="#" class="footer__social__item">
+              <i class="fab fa-pinterest fa-2x"></i>
+            </a>
+
+            <a href="#" class="footer__social__item">
+              <i class="fab fa-instagram fa-2x"></i>
+            </a>
+          </div>
+
+          <p class="footer__copy">
+            © 2021 Loopstudios. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script type="text/javascript" src="dist/js/index.js"></script>
+    <script src="https://kit.fontawesome.com/16ca357d44.js" crossorigin="anonymous"></script>
+  </body>
 </html>

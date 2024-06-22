@@ -1,0 +1,81 @@
+
+.feature {
+  position: relative;
+
+  &__container {
+    position: relative;
+    background-color: $white;
+  }
+
+  &__image {
+    width: 100%;
+    height: 13.125rem;
+    position: relative;
+
+    @include breakpoint-up (medium) {
+      height: 17.5rem;
+    }
+
+    @include breakpoint-up (desktop) {
+      max-width: 45.625rem;
+      min-height: 31.25rem;
+    }
+
+    &::after {
+      content: "";
+      top: 0rem;
+      left: 0rem;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url('../../images/desktop/image-interactive.jpg');
+    }
+  }
+
+  &__description {
+    padding: 2rem .8rem;
+    
+    @include breakpoint-up (desktop) {
+      right: 0rem;
+      bottom: -1.875rem;
+      padding: 5rem;
+      max-width: 32.5rem;
+      position: absolute;
+      background-color: $white;
+
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    &__title {
+      color: $black;
+      padding: .5rem;
+      font-size: 2rem;
+      font-weight: 500;
+      text-align: center;
+      @extend %josefinSans;
+      text-transform: uppercase;
+
+      @include breakpoint-up (desktop) {
+        font-size: 2.6rem;
+      }
+    }
+
+    &__text {
+      @extend %alata;
+      padding: .5rem;
+      color: $darkGray;
+      font-size: .875rem;
+      text-align: center;
+      word-spacing: .25rem;
+
+      @include breakpoint-up (desktop) {
+        max-width: 20rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,167 @@
+
+.creations {
+
+  &__container {
+  }
+
+  &__header {
+    padding: 1.25rem 0;
+    margin-bottom: 1.875rem;
+    @extend %flex, %flex-jc_center-ai_center;
+
+    @include breakpoint-up (desktop) {
+      justify-content: space-between;
+    }
+  }
+
+  &__title {
+    color: $black;
+    font-weight: 400;
+    font-size: 1.9rem;
+    @extend %josefinSans;
+    justify-content: center;
+    text-transform: uppercase;
+    
+    @include breakpoint-up (desktop) {
+      font-weight: 500;
+      font-size: 2.1rem;
+    }
+  }
+
+  &__grid {
+    width: 100%;
+    height: auto;
+    @extend %flex, %flex-fd_column, %flex-jc_center-ai_center;
+
+    @include breakpoint-up (desktop) {
+      display: grid;
+      grid-gap: 1.875rem;
+      grid-template-columns: repeat(4, minmax(12.5rem, 1fr));
+    }
+
+    &__item {
+      $this: &;
+
+      width: 100%;
+      @extend %flex;
+      height: 7.5rem;
+      cursor: pointer;
+      overflow: hidden;
+      position: relative;
+      max-width: 22.875rem;
+      border-radius: .25rem;
+      background-size: cover;
+      background-position: center;
+      transition: all .4s ease-in-out;
+      box-shadow: 0 .3125rem .3125rem -.0625rem rgba($color: $black, $alpha: .6);
+      
+      &::before {
+        z-index: 1;
+        content: '';
+        top: 0rem;
+        left: 0rem;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        backdrop-filter: blur(.75rem);
+        transition: all .4s ease-in-out;
+        background-color: rgba($color: $white, $alpha: .1);
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 1.25rem;
+
+        @include breakpoint-up (desktop) {
+          margin-bottom: 0;
+        }
+      }
+
+      &:hover {
+        &::before {
+          opacity: 1;
+        }
+
+        #{$this}__title {
+          font-weight: 700;
+        }
+      }
+
+      @include breakpoint-up (mobile) {
+        height: 7.5rem;
+      }
+      
+      @include breakpoint-up (medium) {
+        height: 7.5rem;
+        max-width: 30rem;
+      }
+
+      @include breakpoint-up (desktop) {
+        height: 20.75rem;
+        background-position: top center;
+      }
+
+      @include breakpoint-up (medium) {
+        &:nth-child(odd) {
+          align-self: flex-start;
+        }
+
+        &:nth-child(even) {
+          align-self: flex-end;
+        }
+      }
+
+      $itemList: (
+        'grid',
+        'fisheye',
+        'curiosity',
+        'deep-earth',
+        'from-above',
+        'soccer-team',
+        'night-arcade',
+        'pocket-borealis'
+      );
+
+      @each $itemClass in $itemList {
+        &.#{$itemClass} {
+          background-image:
+            linear-gradient(
+              to left,
+              transparent,
+              rgba($color: $black, $alpha: .6)
+            ),
+            url('../../images/mobile/image-#{$itemClass}.jpg');
+
+          @include breakpoint-up (desktop) {
+            background-image:
+              linear-gradient(
+                to bottom,
+                transparent,
+                rgba($color: $black, $alpha: .6)
+              ),
+              url('../../images/desktop/image-#{$itemClass}.jpg');
+          }
+        }
+      }
+
+      &__title {
+        z-index: 2;
+        color: $white;
+        max-width: 45%;
+        font-weight: 100;
+        font-size: 1.7rem;
+        @extend %josefinSans;
+        align-self: flex-end;
+        justify-self: flex-start;
+        text-transform: uppercase;
+        margin: 0 0 .9375rem .9375rem;
+        transition: all .2s ease-in-out;
+      }
+    }
+  }
+
+  &__footer {
+    margin: 2.1875rem 0rem;
+    @extend %flex, %flex-jc_center-ai_center;
+  }
+}
